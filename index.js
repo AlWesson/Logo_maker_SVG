@@ -1,7 +1,6 @@
-//const inquirer = require('inquirer');
-//const Circle = require('./svgShapes');
-//const Square = require('./svgShapes');
-//const Triangle = require('./svgShapes');
+const inquirer = require('inquirer');
+const {Circle, Square, Triangle} = require('./Assets/test/svgShapes');
+
 
 const questions = [
     {
