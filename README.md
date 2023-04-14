@@ -24,6 +24,8 @@
   
   ## Usage
 
+  (https://drive.google.com/file/d/1B5BCqaM3Eb1SpfzhuKNN-x6DLJF35aaP/view)
+
   Usage for simple, yet effective logos.
 
   ## Contributions
