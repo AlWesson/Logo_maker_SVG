@@ -1,8 +1,9 @@
-const inquirer = require('inquirer');
 const fs = require('fs');
+const inquirer = require('inquirer');
+// path where each shape class comes from.
 const {Circle, Square, Triangle} = require('./Assets/test/svgShapes');
 
-
+// questions prompted to the user, and takes their input to use for the logo.svg image customization.
 const questions = [
     {
         type: "input",
@@ -36,16 +37,17 @@ const questions = [
 ];
 //writes new file into 'Image' folder.
 function write(fileName){
-    fs.watchFile('./Images/logo.svg', fileName, (err) => err ? console.log(err): console.log("Generated logo.svg"));
+    fs.writeFile('./Images/logo.svg', fileName, (err) => err ? console.log(err): console.log("Generated logo.svg"));
 }
-
+// initializes the questions and throws answers into the "processing" function.
 function init() {
     inquirer.prompt(questions).then((answers) =>{
         const fileName = processing(answers);
-        write(fileName);
+        
     });
 }
-
+// this function implements all the answers taken from the user and inputs them into the needed areas from the shape class to customize the svg logo.
+// 
 function processing(input){
     textChoice = input.text;
     textColor = input.tColor;
@@ -64,12 +66,12 @@ function processing(input){
     }
 
     selection.setColor(shapeColor);
-    selection.setText(textChoice);
     selection.setTextColor(textColor);
+    selection.setText(textChoice);
 
     renderString = selection.render();
-
-    return renderString;
+    write(renderString);
+    //return renderString;
 }
 
 init();

@@ -1,5 +1,6 @@
 const {Circle, Square, Triangle} = require('./svgShapes');
 
+//tests for each shape to ensure that all data input into them are set and rendered correctly. 
 
 describe("Circle", () => {
     it('should apply the correct color into the circle with the correct text and text color.', () =>{
@@ -11,7 +12,7 @@ describe("Circle", () => {
         circle.setText(text);
         circle.setTextColor(colorT);
         
-        expect(circle.render()).toEqual(`<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg"><circle cx="150" cy="100" r="80" fill=${colorS}/><text x="150" y="125" font-size="60" text-anchor="middle" fill="${colorT}">${text}</text></svg>`);
+        expect(circle.render()).toEqual(`<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg"><circle cx="150" cy="100" r="80" fill="${colorS}"/><text x="150" y="125" font-size="60" text-anchor="middle" fill="${colorT}">${text}</text></svg>`);
     });
 });
 
@@ -25,7 +26,7 @@ describe("Square", () => {
         square.setText(text);
         square.setTextColor(colorT);
         
-        expect(square.render()).toEqual(`<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg"><rect x="50" height="220" width="220" fill=${colorS}/><text x="150" y="125" font-size="60" text-anchor="middle" fill="${colorT}">${text}</text></svg>`);
+        expect(square.render()).toEqual(`<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg"><rect x="50" height="220" width="220" fill="${colorS}"/><text x="150" y="125" font-size="60" text-anchor="middle" fill="${colorT}">${text}</text></svg>`);
     });
 });
 
@@ -39,6 +40,6 @@ describe("Triangle", () => {
         triangle.setText(text);
         triangle.setTextColor(colorT);
         
-        expect(triangle.render()).toEqual(`<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg"><polygon height="100%" width="100%" points="0, 200 300, 200 150, 0" fill=${colorS}/><text x="150" y="125" font-size="60" text-anchor="middle" fill="${colorT}">${text}</text></svg>`);
+        expect(triangle.render()).toEqual(`<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg"><polygon height="100%" width="100%" points="0, 200 300, 200 150, 0" fill="${colorS}"/><text x="150" y="125" font-size="60" text-anchor="middle" fill="${colorT}">${text}</text></svg>`);
     });
 });
